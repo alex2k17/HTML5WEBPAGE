@@ -3894,7 +3894,10 @@
 }
 
 
-
+.affix .container .navbar-collapse .nav>li>a:focus, .affix .container .navbar-collapse .nav>li>a:hover{
+	text-decoration: none !important;
+	border:none !important;
+}
 
 .affix {
     top: 0 !important;
