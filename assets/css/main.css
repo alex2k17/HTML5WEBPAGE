@@ -3879,7 +3879,7 @@
 	background-color: #fff;
 }
 
-.navbar-default{
+.navbar-default, .navbar-collapse, .navbar-form{
 	background-color: #fff;
     border: none;
 }
@@ -3887,6 +3887,7 @@
 .navbar-header a, .navbar-collapse a{
 	text-decoration: none !important;
 	border-bottom: none;
+	border:none;
 }
 
 
