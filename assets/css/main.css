@@ -3939,17 +3939,21 @@
 	text-transform: none !important;
 	font-weight: bold;
 	font-family: 'myriad_set_proultralight';
+	border-bottom: 
 
 }
 
-.titleServices:before {
-  content : "";
-  position: absolute;
-  left    : 50%;
-  bottom  : 85%;
-  height  : 1px;
-  width   : 5%;  /* or 100px */
-  border-bottom:1px solid black;
+.titleServices:after {
+    content: '';
+    position:absolute;
+    background: black;
+    width: 5%;
+    height: 2px;
+    left    : 50%;
+  	bottom  : 88%;
+  	height  : 1px;
+    display: block;
+ 
 }
 
 .Services-text{
@@ -3957,5 +3961,4 @@
     color:black;
     font-family: 'myriad_set_prothin';
     font-size: 16px;
-    padding-bottom: 30px;
 }
