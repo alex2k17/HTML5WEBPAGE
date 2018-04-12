@@ -3494,10 +3494,10 @@
 			-webkit-transition: -webkit-transform 0.75s ease, opacity 0.75s ease;
 			-ms-transition: -ms-transform 0.75s ease, opacity 0.75s ease;
 			transition: transform 0.75s ease, opacity 0.75s ease;
-			-moz-transition-delay: 2.5s;
-			-webkit-transition-delay: 2.5s;
-			-ms-transition-delay: 2.5s;
-			transition-delay: 2.5s;
+			-moz-transition-delay: 1.7s;
+			-webkit-transition-delay: 1.7s;
+			-ms-transition-delay: 1.7s;
+			transition-delay: 1.7s;
 			-moz-transform: translateY(0);
 			-webkit-transform: translateY(0);
 			-ms-transform: translateY(0);
@@ -3740,7 +3740,14 @@
 /* Footer */
 
 	#footer {
-		padding: 6em 0 4em 0 ;
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("../../images/awa.jpg");
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("../../images/awa.jpg");
+		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("../../images/awa.jpg");
+		background-image: linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("../../images/awa.jpg");
+		
+		background-repeat: no-repeat;
+		background-size: cover;
+		padding: 6em 0 0em 0 ;
 		background-color: #1d242a;
 		text-align: center;
 	}
@@ -3750,15 +3757,17 @@
 		}
 
 			#footer .icons a {
-				color: rgba(255, 255, 255, 0.5);
+				color: rgba(255, 255, 255, 0.8);
 			}
 
 				#footer .icons a:hover {
 					color: #fff;
+					text-decoration: none;
+					border: none;
 				}
 
 		#footer .copyright {
-			color: rgba(255, 255, 255, 0.5);
+			color: rgba(255, 255, 255, 0.7);
 			font-size: 0.8em;
 			letter-spacing: 0.225em;
 			list-style: none;
@@ -3782,10 +3791,26 @@
 
 				#footer .copyright li a {
 					color: inherit;
+					text-decoration: none !important;
+					border-bottom: none !important;
+					border: none;
 				}
 
 					#footer .copyright li a:hover {
 						color: #fff;
+						text-decoration: none !important;
+						border-bottom: none !important;
+					}
+
+					.footer-copyright a{
+						text-decoration: none !important;
+						border-bottom: none !important;
+					}
+
+					.footer-copyright a:hover{
+						color: #fff;
+					    text-decoration: none;
+					    border: none;
 					}
 
 				@media screen and (max-width: 480px) {
@@ -3981,4 +4006,20 @@
 #one img{
 	width: 100%;
 	vertical-align: middle;
+}
+
+/* stuff */
+
+#two{
+	width: 100%;
+	height: 400px;
+	background-color: #fff;
+}
+
+
+/* Footer */
+
+#imgCarusFerryBlanco{
+	width: 40%;
+	margin-bottom: 35px;
 }
