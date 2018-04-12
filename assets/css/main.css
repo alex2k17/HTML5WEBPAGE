@@ -3971,3 +3971,9 @@
 	width: 70%;
 	margin-left: 15%;
 }
+
+/* FOTO BANNER */
+
+#one img{
+	width: 100%;
+}
