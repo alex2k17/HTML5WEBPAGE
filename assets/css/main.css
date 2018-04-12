@@ -3873,37 +3873,30 @@
 	width:10%;
 }
 /*CSS MENU*/
-	#menuSection {
-		width: 100%;
-		height: 200px;
-		background-color: #fff;
-	}
-	.menuPrincipal {
-		color: #000;
-		text-align: center;
-	}
-	.menuPrincipal li {
-		list-style: none outside;
-		display: inline-block;
-		text-transform: uppercase;
+#menuSection {
+	width: 100%;
+	height: 200px;
+	background-color: #fff;
+}
 
-	}
-	.menuPrincipal ul li a {
-		border-bottom: none;
-		text-decoration: none !important;
-	}	
-	.menuPrincipal ul {
-		width: 50%;
-		margin: auto;
-		position: absolute;
-		top: 20%; left: 6%; bottom: 0; right: 0;
-	}
+.navbar-default{
+	background-color: #fff;
+    border: none;
+}
+
+.navbar-header a, .navbar-collapse a{
+	text-decoration: none !important;
+	border-bottom: none;
+}
+
+
 
 .affix {
     top: 0 !important;
     width: 100%;
     z-index: 9999 !important;
     background-color:white;
+    padding: 0px;
 
 }
 
@@ -3911,17 +3904,22 @@
 	padding-top: 70px;
 }
 
-.affix ul{
-	width: 50%;
-	margin: auto;
-	position: absolute;
-	top: 0; left: 6%; bottom: 0; right: 0;
-}
-
 .affix-top{
 	position:relative;
 	height: 100%;
+	padding-top: 20px;
 }
+
+.navbar .navbar-header,
+.navbar-collapse {
+    float:none;
+    display:inline-block;
+    vertical-align: top;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
 
 /* CSS SERVICES */
 
@@ -3939,7 +3937,6 @@
 	text-transform: none !important;
 	font-weight: bold;
 	font-family: 'myriad_set_proultralight';
-	border-bottom: 
 
 }
 
