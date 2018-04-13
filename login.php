@@ -6,10 +6,11 @@ require_once("DATOS/bddConnection.php")
 	<html>
 	<head>
 		<title>Login</title>
-		<link rel="stylesheet" type="text/css" href="./css/mainLogin">
+		<link rel="stylesheet" type="text/css" href="css/login.css">
 		<script src="js/mScript.js"></script>
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<!-- jQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<!-- Popper JS -->
@@ -18,18 +19,26 @@ require_once("DATOS/bddConnection.php")
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<main>
 			<section>
-			  <h3>Login</h3>
-			  <form id="loginform" method="post">
-			    <label for="usuario">Usuario</label>
-			    	<input type="text" id="usuario" name="usuario" placeholder="Introduce tu usuario..">
-			    <label for="password">Contraseña</label>
-			    	<input type="password" id="password" name="password" placeholder="Introduce tu contraseña..">
-			    <input type="submit" value="Login" name="loginsub">
-			  </form>
+				<div class="container">
+			    	<div class="row align-items-center justify-content-center">
+			        	<div class="col-md-offset-5 col-md-3 col-centered">
+			            <div class="form-login">
+			            <h4>Bienvenido.</h4>
+			            <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="Usuario" />
+			            </br>
+			            <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="Password" />
+			            </br>
+			            <div class="wrapper">
+			            <span class="group-btn">     
+			                <a href="#" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
+			            </span>
+			            </div>
+			            </div>
+        </div>
+    </div>
+</div>
 			</section>
-		</main>
 	</body>
 </html>
 
