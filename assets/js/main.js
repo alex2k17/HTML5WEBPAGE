@@ -61,7 +61,7 @@
 			});
 
 		//$(".navbar").affix({offset: {top: $("#banner").outerHeight(true)} });
-		$( ".navbar" ).attr( "data-offset-top", $("#banner").outerHeight(true) );
+		$( ".navbar" ).attr( "data-offset-top", $("#banner").outerHeight(true)+10 );
 
 
 		// Scrolly.
