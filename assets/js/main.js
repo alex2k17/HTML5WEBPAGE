@@ -1,8 +1,3 @@
-/*
-	Spectral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
 
 (function($) {
 
@@ -64,6 +59,10 @@
 					skel.breakpoint('medium').active
 				);
 			});
+
+		//$(".navbar").affix({offset: {top: $("#banner").outerHeight(true)} });
+		$( ".navbar" ).attr( "data-offset-top", $("#banner").outerHeight(true) );
+
 
 		// Scrolly.
 			$('.scrolly')
