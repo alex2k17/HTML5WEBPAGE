@@ -10,7 +10,7 @@ else
 
 
 if($accion=="login"){
-	$success = false;
+	
 	$con = abrirConexion();
 
 	$usuario = stripslashes(strip_tags($_POST['usuario']));
@@ -25,14 +25,13 @@ if($accion=="login"){
 	$valid = $stmt->fetchColumn();
 
 	if ($valid){
-		$success = true;
 		session_start();
 		session_regenerate_id();
 		$_SESSION['user'] = $usuario;
 		session_write_close();
-		return $success;
+		echo "login";
 	}else{
-		return $success;
+		echo "error";
 	}
 
 

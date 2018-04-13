@@ -1,14 +1,25 @@
 jQuery(function($){
 
-	$("#loginform").submit(function () {
-		$.ajax({
-			type: "POST",
-			url: "funciones.php",
-			data: $(this).serialize(),
-			success: function (data) {
-				console.log(data);
-			}
-		});
+	$("#btnLogin").click(function () {
+		var usurario = $("#usuario").val();
+		var password = $("#password").val();
+		if (usuario!="" || password!="") {
+			console.log("Usuario "+usuario.value);
+			console.log("Password "+password);
+			$.ajax({
+				type: "POST",
+				url: "funciones.php",
+				data: {
+					"accion":"login",
+					"usuario":usuario.value,
+					"password":password
+				},
+				success: function (data) {
+	        			console.log(data);
+
+				}
+			});
+		}
 	});
 
 
