@@ -19,26 +19,26 @@ require_once("DATOS/bddConnection.php")
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-			<section>
-				<div class="container">
-			    	<div class="row align-items-center justify-content-center">
-			        	<div class="col-md-offset-5 col-md-3 col-centered">
+		<section>
+			<div class="container">
+			    <div class="row align-items-center justify-content-center">
+			        <div class="col-md-offset-5 col-md-3 col-centered">
 			            <div class="form-login">
-			            <h4>Bienvenido.</h4>
-			            <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="Usuario" />
-			            </br>
-			            <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="Password" />
-			            </br>
-			            <div class="wrapper">
-			            <span class="group-btn">     
-			                <a href="#" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
-			            </span>
+			            	<h4>Bienvenido.</h4>
+			            	<input type="text" id="userName" class="form-control input-sm chat-input" placeholder="Usuario" />
+			            	</br>
+			            	<input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="Password" />
+			           		</br>
+			            	<div class="wrapper">
+			            		<span class="group-btn">     
+			                		<a href="#" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
+			            		</span>
+			            	</div>
 			            </div>
-			            </div>
-        </div>
-    </div>
-</div>
-			</section>
+        			</div>
+   				</div>
+			</div>
+		</section>
 	</body>
 </html>
 
