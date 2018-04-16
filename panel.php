@@ -29,6 +29,7 @@ session_start();
 		}else{
 			?>
 			<h3 style='text-align:center;'>This page is <strong>only visible</strong> for <strong>authorized</strong> users</h3>
+			<h4 style='text-align:center;'>Return to <a href="http://i-pointsite.com/CARUSFERRY" >Main page</a></h4>
 			<?php
 
 		}
