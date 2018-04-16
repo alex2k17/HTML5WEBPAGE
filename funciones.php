@@ -37,6 +37,16 @@ if($accion=="login"){
 }
 
 
+function createUI() {
+	$contenido = "";
+	$contenido .= "<div id='menuTop'>"
+	$contenido .= "	<ul> 
+						<li>Bienvenicdo,</li>
+						<li><a href='login.php'>Cerrar sesión</a></li> 
+					</ul>"
+	$contenido .= "</div>"
 
+	return $contenido;
+}
 
 ?>
