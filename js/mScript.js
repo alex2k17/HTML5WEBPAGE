@@ -40,4 +40,10 @@ jQuery(function($){
 		});
 	});
 
+	$("#modificarPagina").click(function(){
+		$( ".main" ).empty();
+		$(".main").append("<section id='mServices'><div class='container-fluid'><div class='row'><div class='col-xs-6 col-md-4'><h2 class='titleServices'>CarRes</h2><p class='Services-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse arcu turpis, congue in elit id, posuere iaculis ante. Mauris quis augue nec tellus volutpat dignissim nec a lacus.</p></div><div class='col-xs-6 col-md-4'><h2 class='titleServices'>ePos -TPV</h2><p class='Services-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse arcu turpis, congue in elit id, posuere iaculis ante. Mauris quis augue nec tellus volutpat dignissim nec a lacus.</p></div><div class='col-xs-6 col-md-4'><h2 class='titleServices'>Poirt - Carus Port</h2><p class='Services-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse arcu turpis, congue in elit id, posuere iaculis ante. Mauris quis augue nec tellus volutpat dignissim nec a lacus.</p></div></div></div></section>");
+
+	});
+
 });

@@ -63,15 +63,13 @@ function createUI() {
     $contenido .= "</nav>";
 
     $contenido .= "<div class='sidenav'>
-  <a href='#'>About</a>
-  <a href='#'>Services</a>
-  <a href='#'>Clients</a>
-  <a href='#'>Contact</a>
+  <a id='modificarPagina' href='#'>Modificar página</a>
+  <a id='blog' href='#'>Blog</a>
 </div>
 
 <div class='main'>
-  <h2>Sidenav Example</h2>
-  <p>This sidenav is always shown.</p>
+  <h2>Administración</h2>
+  <p>Panel de control.</p>
 </div>";
 
 	echo $contenido;
