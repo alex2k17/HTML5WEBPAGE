@@ -39,14 +39,14 @@ if($accion=="login"){
 
 function createUI() {
 	$contenido = "";
-	$contenido .= "<div id='menuTop'>"
-	$contenido .= "	<ul> 
-						<li>Bienvenicdo,</li>
+	$contenido .= "<div id='menuTop'>";
+	$contenido .= "<ul> 
+						<li>Bienvenido, ".$_SESSION['user']."</li>
 						<li><a href='login.php'>Cerrar sesión</a></li> 
-					</ul>"
-	$contenido .= "</div>"
+					</ul>";
+	$contenido .= "</div>";
 
-	return $contenido;
+	echo $contenido;
 }
 
 ?>
