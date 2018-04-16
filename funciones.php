@@ -14,24 +14,23 @@ if($accion=="login"){
 	$con = abrirConexion();
 
 	$usuario = stripslashes(strip_tags($_POST['usuario']));
-	$pass = stripslashes(strip_tags($_POST['password']));
+	$password = stripslashes(strip_tags($_POST['password']));
 
 	$stmt = $con -> prepare('SELECT * FROM Usuarios WHERE usuario = :usuario AND password = :password LIMIT 1');
 
-	$stmt->bindValue( "usuario", $this->usuario, PDO::PARAM_STR);
-	$stmt->bindValue( "password", md5($this->password), PDO::PARAM_STR);
+	$stmt->bindValue( "usuario", $usuario, PDO::PARAM_STR);
+	$stmt->bindValue( "password", $password, PDO::PARAM_STR);
 	$stmt->execute();
 
-	$valid = $stmt->fetchColumn();
 
-	if ($valid){
+	if ($stmt->rowCount() == 1){
 		session_start();
 		session_regenerate_id();
 		$_SESSION['user'] = $usuario;
 		session_write_close();
-		echo "login";
+		echo "Login";
 	}else{
-		echo "error";
+		echo "Error";
 	}
 
 
