@@ -1,5 +1,8 @@
 <?php
-require_once("DATOS/bddConnection.php");
+require_once("funciones.php");
+
+
+
 ?>
 <!--HTML -->
 <!DOCTYPE html>
