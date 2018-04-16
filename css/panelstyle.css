@@ -1,0 +1,14 @@
+
+/*Menu arriba*/
+.menuTop ul {
+	vertical-align: middle;
+	padding-top: 1rem;
+	
+}
+.menuTop ul li {
+	list-style-type: none;
+	display: inline-block;
+}
+.menuTop ul li img {
+	width: 10%;
+	vertical-align: -webkit-baseline-middle;

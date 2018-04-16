@@ -39,8 +39,9 @@ if($accion=="login"){
 
 function createUI() {
 	$contenido = "";
-	$contenido .= "<div id='menuTop'>";
+	$contenido .= '<div class="collapse navbar-collapse menuTop align-middle" id="navbarTogglerDemo01">';
 	$contenido .= "<ul> 
+						<li><img src='images/logo.png class='navbar-brand' /></li>
 						<li>Bienvenido, ".$_SESSION['user']."</li>
 						<li><a href='login.php'>Cerrar sesión</a></li> 
 					</ul>";
