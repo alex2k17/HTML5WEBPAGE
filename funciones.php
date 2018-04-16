@@ -56,6 +56,21 @@ if($accion=="login"){
 
 	header('Content-type: application/json');
 	echo json_encode($return);
+
+}else if($accion=="updateService"){
+	$titulo = $_POST['titulo'];
+	$descripcion = $_POST['descripcion'];
+	$id = $_POST['id'];
+
+	$con = abrirConexion();
+
+	$sql = "UPDATE HOME SET DescripcionServ = $descripcion, TituloServ = $titulo WHERE codServ = $id";
+
+	$stmt = $con->prepare($sql);
+
+	$stmt->execute();
+
+	echo("perfe");
 }
 
 
