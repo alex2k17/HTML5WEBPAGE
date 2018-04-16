@@ -36,7 +36,26 @@ if($accion=="login"){
 
 }else if($accion=="cerrarSesion"){
 	session_destroy();
+
 	echo "good";
+
+}else if ($accion=="getServices") {
+	$con = abrirConexion();
+
+	$sql = "SELECT * FROM HOME";
+
+	$result = $con->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+
+	foreach ($result as $row) {
+    $return[] = [ 
+	        'id' => $row['codServ'],
+	        'titulo' => $row['TituloServ'],
+	        'descripcion' => $row['DescripcionServ']
+	    ];
+	}
+
+	header('Content-type: application/json');
+	echo json_encode($return);
 }
 
 
