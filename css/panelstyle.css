@@ -12,3 +12,8 @@
 .menuTop ul li img {
 	width: 10%;
 	vertical-align: -webkit-baseline-middle;
+}
+#cerrarSesion {
+	position: absolute;
+    right: 6px
+}

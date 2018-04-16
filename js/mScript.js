@@ -26,4 +26,19 @@ jQuery(function($){
 	});
 
 
+
+	$("#cerrarSesion").click(function(){
+		$.ajax({
+			type: "POST",
+			url: "funciones.php",
+			data: {
+				"accion":"cerrarSesion"
+			},
+			success: function () {
+				location.replace("http://i-pointsite.com/CARUSFERRY");	
+			}
+		});
+	});
+
+
 });
