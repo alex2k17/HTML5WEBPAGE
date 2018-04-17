@@ -20,6 +20,8 @@ session_start();
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="js/mScript.js"></script>
+	<script src="js/tinymce.min.js"></script>
+ 	<script>tinymce.init({ selector:'textarea' });</script>
 </head>
 <body>
 	<?php

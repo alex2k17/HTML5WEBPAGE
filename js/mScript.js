@@ -74,7 +74,7 @@ jQuery(function($){
 	});
 
 	$("#modificarPagina").click(function(){
-		$( ".main" ).empty();
+		$(".main").empty();
 		$.ajax({
 			type: "POST",
 			url: "funciones.php",
@@ -95,6 +95,13 @@ jQuery(function($){
 				}
 			}
 		});
+	});
+
+	$("#blog").click(function(){
+		$(".main").empty();
+		$("head").append("<script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script><script>tinymce.init({ selector:'textarea' });</script>");
+		$(".main").append("<section id='mServices'><div class='container-fluid'><div class='row'><div class='col-xs-6 col-md-4'><h2>Blog</h2><div class='input-group' style='width:100%;'><span class='input-group-addon'>Título</span><input class='form-control' id='titulo1' type='text'></div><br><p style='font-size:23px;'>Contenido:</p><textarea id='textarea1' style='width:auto;' rows='6' cols='60'></textarea><br><div><button class='actualizar btn btn-default' data-usage='edit' type='button' class='btn btn-default btn-md'>Publicar</button></div></div></div></section>");
+
 	});
 
 	function UpdateServ() {
@@ -120,19 +127,5 @@ jQuery(function($){
 			}
 		});
 	}
-
-	$("#blog").click(function(){
-		(".main").empty();
-		$.ajax({
-			type: "POST",
-			url: "funciones.php",
-			data: {
-				"accion":"getBlogs"
-			},
-			success: function () {
-				console.log("Click realizado");
-			}
-		});
-	});
 
 });
