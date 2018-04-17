@@ -8,7 +8,6 @@ jQuery(function($){
 				"accion":"getServices"
 			},
 			success: function (data) {
-				console.log("Success");
 				for(i = 0; i < data.length; i++){
 					$(".Services").append("<div class='col-xs-6 col-md-4'><h2 class='titleServices'>"+data[i].titulo+"</h2><p class='Services-text'>"+data[i].descripcion+"</p></div>");
 				}
@@ -24,7 +23,6 @@ jQuery(function($){
 				"accion":"getBlogs"
 			},
 			success: function (data) {
-				console.log(data);
 				for(i = 0; i < data.length; i++){
 					$(".Blogs").append("<div class='col-xs-6 col-md-4'><a style='text-decoration:none; 'href='#'><img style='width:50%; display:block; margin:0 auto;' src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Playa-el-campello.jpg/800px-Playa-el-campello.jpg'/><h2 class='titleServices' style='padding-top:10px;'>"+data[i].titulo+"</h2><h4 class='Services-text'>" + data[i].fecha + "</h4><p class='Services-text'>"+data[i].descripcion+"</p></a></div>");
 				}
@@ -83,6 +81,7 @@ jQuery(function($){
 			},
 			success: function (data) {
 				$(".main").append("<section id='mServices'><div class='container-fluid'><div class='row'><div class='col-xs-6 col-md-4'><h2>Servicio 1</h2><div class='input-group' style='width:50%;'><span class='input-group-addon'>Título</span><input class='form-control' id='titulo1' type='text'></div><br>Descripción:<br><textarea style='width:auto;' class='form-control' id='descripcion1' rows='6' cols='40'></textarea><br><div><button class='actualizar btn btn-default' data-usage='1' type='button' class='btn btn-default btn-md'>Actualizar</button></div></div><div class='col-xs-6 col-md-4'><h2>Servicio 2</h2><div class='input-group' style='width:50%;'><span class='input-group-addon'>Título</span><input class='form-control' id='titulo2' type='text'></div><br>Descripción:<br><textarea style='width:auto;' class='form-control' id='descripcion2' rows='6' cols='40'></textarea><br><button class='actualizar btn btn-default' data-usage='2' type='button' class='btn btn-default btn-md'>Actualizar</button></div><div class='col-xs-6 col-md-4'><h2>Servicio 3</h2><div class='input-group' style='width:50%;'><span class='input-group-addon'>Título</span><input class='form-control' id='titulo3' type='text'></div><br>Descripción:<br> <textarea style='width:auto;' class='form-control' id='descripcion3' rows='6' cols='40'></textarea><br><button class='actualizar btn btn-default' data-usage='3' class='btn btn-default btn-md' type='button'>Actualizar</button></div></div></div></section>");
+				$(".main").append("<script>tinymce.init({ selector:'textarea' });</script>");
 				$("#titulo1").val(data[0].titulo);
 				$("#descripcion1").val(data[0].descripcion);
 				$("#titulo2").val(data[1].titulo);
@@ -99,9 +98,8 @@ jQuery(function($){
 
 	$("#blog").click(function(){
 		$(".main").empty();
-		$("head").append("<script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script><script>tinymce.init({ selector:'textarea' });</script>");
 		$(".main").append("<section id='mServices'><div class='container-fluid'><div class='row'><div class='col-xs-6 col-md-4'><h2>Blog</h2><div class='input-group' style='width:100%;'><span class='input-group-addon'>Título</span><input class='form-control' id='titulo1' type='text'></div><br><p style='font-size:23px;'>Contenido:</p><textarea id='textarea1' style='width:auto;' rows='6' cols='60'></textarea><br><div><button class='actualizar btn btn-default' data-usage='edit' type='button' class='btn btn-default btn-md'>Publicar</button></div></div></div></section>");
-
+		$(".main").append("<script>tinymce.init({ selector:'textarea' });</script>");
 	});
 
 	function UpdateServ() {
