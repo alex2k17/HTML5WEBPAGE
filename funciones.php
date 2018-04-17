@@ -64,13 +64,17 @@ if($accion=="login"){
 
 	$con = abrirConexion();
 
-	$sql = "UPDATE HOME SET DescripcionServ = $descripcion, TituloServ = $titulo WHERE codServ = $id";
+	$sql = "UPDATE HOME SET TituloServ = :titulo, DescripcionServ = :descripcion WHERE codServ = :id";
 
 	$stmt = $con->prepare($sql);
 
+	$stmt->bindValue( "titulo", $titulo, PDO::PARAM_STR);
+	$stmt->bindValue( "descripcion", $descripcion, PDO::PARAM_STR);
+	$stmt->bindValue( "id", $id, PDO::PARAM_STR);
+
 	$stmt->execute();
 
-	echo("perfe");
+	echo "Update";
 }
 
 
@@ -79,7 +83,7 @@ function createUI() {
 	$contenido .= "<nav class='navbar navbar-inverse navbar-fixed-top'>";
 		$contenido .= "<div class='container-fluid'>";
 			$contenido .= "<div class='navbar-header'>";
-				$contenido .= "<a class='navbar-brand' href='#'><img src='images/logo2.png' width='70' class='d-inline-block align-top' alt=''></a>";
+				$contenido .= "<a class='navbar-brand' href='#'><img src='images/logo_blanco.png' width='70' class='d-inline-block align-top' alt=''></a>";
 				$contenido .= "<ul class='nav navbar-nav'>";
 					$contenido .= "<li class='nav-item active'>
 	        							<p class='navbar-text'>Bienvenido!, ".$_SESSION['user']."</p>
