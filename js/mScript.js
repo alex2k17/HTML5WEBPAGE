@@ -16,6 +16,22 @@ jQuery(function($){
 		});
 	});
 
+	$(document).ready(function () {
+		$.ajax({
+			type: "POST",
+			url: "funciones.php",
+			data: {
+				"accion":"getBlogs"
+			},
+			success: function (data) {
+				console.log(data);
+				for(i = 0; i < data.length; i++){
+					$(".Blogs").append("<div class='col-xs-6 col-md-4'><a style='text-decoration:none; 'href='#'><img style='width:50%; display:block; margin:0 auto;' src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Playa-el-campello.jpg/800px-Playa-el-campello.jpg'/><h2 class='titleServices' style='padding-top:10px;'>"+data[i].titulo+"</h2><h4 class='Services-text'>" + data[i].fecha + "</h4><p class='Services-text'>"+data[i].descripcion+"</p></a></div>");
+				}
+			}
+		});
+	});
+
 
 	$("#btnLogin").click(function () {
 		var usurario = $("#usuario").val();
@@ -105,5 +121,18 @@ jQuery(function($){
 		});
 	}
 
+	$("#blog").click(function(){
+		(".main").empty();
+		$.ajax({
+			type: "POST",
+			url: "funciones.php",
+			data: {
+				"accion":"getBlogs"
+			},
+			success: function () {
+				console.log("Click realizado");
+			}
+		});
+	});
 
 });

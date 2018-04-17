@@ -75,7 +75,46 @@ if($accion=="login"){
 	$stmt->execute();
 
 	echo "Update";
+}else if($accion=="getBlogs"){
+	$con = abrirConexion();
+
+	$sql = "SELECT * FROM BLOG ORDER BY fecha LIMIT 3";
+
+	$result = $con->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+
+	foreach ($result as $row) {
+		$date1 = strtr($row['fecha'], '/', '-');
+		$fecha=date('d-m-Y', strtotime($date1));
+	    $return[] = [ 
+		        'id' => $row['codBlog'],
+		        'titulo' => $row['titulo'],
+		        'descripcion' => trim_text($row['descripcion'], 15),
+		        'imagen' => $row['foto'],
+		        'fecha' => $fecha
+		    ];
+	}
+
+	header('Content-type: application/json');
+	echo json_encode($return);
 }
+
+function trim_text($text, $count){ 
+	$text = str_replace("  ", " ", $text); 
+	$string = explode(" ", $text); 
+
+	for ( $wordCounter = 0; $wordCounter <= $count; $wordCounter++){ 
+		$trimed .= $string[$wordCounter]; 
+		if ( $wordCounter < $count ){
+	 		$trimed .= " "; 
+	 	} else { 
+	 		$trimed .= "..."; 
+	 	} 
+	}
+
+	$trimed = trim($trimed); 
+
+	return $trimed; 
+} 
 
 
 function createUI() {
