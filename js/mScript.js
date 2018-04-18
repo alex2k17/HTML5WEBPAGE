@@ -128,4 +128,31 @@ jQuery(function($){
 		});
 	}
 
+	function addButtonsUpload(url) {
+		var url = '../php/';
+		$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', 'fileupload/css/jquery.fileupload.css'));
+		$("#textarea1").append("<div class='row' style='margin-left:20px; margin-top:20px;'><span class='btn btn-success fileinput-button'><i class='fa fa-plus' style='font-size:12px'></i><span> Seleccionar</span><input id='fileupload' type='file' name='files[]' data-url="+url+" multiple></span><br><br></div>");
+		$("#textarea1").append("<div class='row' style='margin-left:20px; margin-top:20px;'><div id='progress' class='progress' style='width:90%;'><div class='progress-bar progress-bar-success'></div></div></div>");
+		$("#textarea1").append("<div class='row' style='margin-left:20px; margin-top:20px;'><div id='files' class='files'></div></div>");
+		
+		$('#fileupload').fileupload({
+			url: url,
+	        dataType: 'json',
+	        done: function (e, data) {
+	            $.each(data.result.files, function (index, file) {
+	                $('<p/>').text(file.name).appendTo(".files");
+	            });
+	        },
+	       progressall: function (e, data) {
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            $("#progress .progress-bar").css("width", "0");
+            $('#progress .progress-bar').css(
+                'width',
+                progress + '%'
+            );
+        }
+	    }).prop('disabled', !$.support.fileInput)
+        .parent().addClass($.support.fileInput ? undefined : 'disabled');
+	}
+
 });
