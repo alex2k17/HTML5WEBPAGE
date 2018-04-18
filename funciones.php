@@ -96,6 +96,25 @@ if($accion=="login"){
 
 	header('Content-type: application/json');
 	echo json_encode($return);
+
+}else if($accion=='insertBlog'){
+	$titulo = $_POST['titulo'];
+	$descripcion = $_POST['descripcion'];
+	$fichero = $_POST['ficheros'];
+
+	$con = abrirConexion();
+
+	$sql = "INSERT INTO BLOG ('titulo', 'descripcion', 'foto') VALUES(:titulo, :descripcion, :foto";
+
+	$stmt = $con->prepare($sql);
+
+	$stmt->bindValue( "titulo", $titulo, PDO::PARAM_STR);
+	$stmt->bindValue( "descripcion", $descripcion, PDO::PARAM_STR);
+	$stmt->bindValue( "foto", "http://i-pointsite.com/CARUSFERRY/php/files/"+$fichero, PDO::PARAM_STR);
+
+	$stmt->execute();
+
+	echo "INSERTADO";
 }
 
 function trim_text($text, $count){ 
