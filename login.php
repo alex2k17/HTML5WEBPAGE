@@ -13,6 +13,14 @@ require_once("funciones.php");
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<!--FAV ICON-->
+		<link rel="apple-touch-icon" sizes="180x180" href="fav/login/apple-touch-icon.png"+>
+		<link rel="icon" type="image/png" sizes="32x32" href="fav/login/key-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="fav/login/keyfavicon-16x16.png">
+		<link rel="manifest" href="fav/login/keysite.webmanifest">
+		<link rel="mask-icon" href="fav/login/keysafari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
 		<!-- jQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<!-- Popper JS -->
@@ -20,6 +28,8 @@ require_once("funciones.php");
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 		<script src="js/mScript.js"></script>
+
+
 	</head>
 	<body>
 		<section>

@@ -26,7 +26,7 @@ jQuery(function($){
 			},
 			success: function (data) {
 				for(i = 0; i < data.length; i++){
-					$(".Blogs").append("<div class='col-xs-6 col-md-4'><a style='text-decoration:none; 'href='#'><img style='width:50%; display:block; margin:0 auto;' src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Playa-el-campello.jpg/800px-Playa-el-campello.jpg'/><h2 class='titleServices' style='padding-top:10px;'>"+data[i].titulo+"</h2><h4 class='Services-text'>" + data[i].fecha + "</h4>"+data[i].descripcion+"</a></div>");
+					$(".Blogs").append("<div class='col-xs-6 col-md-4'><a style='text-decoration:none; 'href='#'><img style='width:350px; height:190px; display:block; margin:0 auto;' src='"+data[i].imagen+"'/><h2 class='titleServices' style='padding-top:10px;'>"+data[i].titulo+"</h2><h4 class='Services-text'>" + data[i].fecha + "</h4>"+data[i].descripcion+"</a></div>");
 				}
 			}
 		});
