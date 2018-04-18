@@ -11,7 +11,7 @@ jQuery(function($){
 			},
 			success: function (data) {
 				for(i = 0; i < data.length; i++){
-					$(".Services").append("<div class='col-xs-6 col-md-4'><h2 class='titleServices'>"+data[i].titulo+"</h2>"+data[i].descripcion+"</div>");
+					$(".Services").append("<div class='col-xs-6 col-md-4'><h2 class='titleServices'>"+data[i].titulo+"</h2><p class='Services-text'>"+data[i].descripcion+"</p></div>");
 				}
 			}
 		});
@@ -26,7 +26,7 @@ jQuery(function($){
 			},
 			success: function (data) {
 				for(i = 0; i < data.length; i++){
-					$(".Blogs").append("<div class='col-xs-6 col-md-4'><a style='text-decoration:none; 'href='#'><img style='width:50%; display:block; margin:0 auto;' src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Playa-el-campello.jpg/800px-Playa-el-campello.jpg'/><h2 class='titleServices' style='padding-top:10px;'>"+data[i].titulo+"</h2><h4 class='Services-text'>" + data[i].fecha + "</h4><p class='Services-text'>"+data[i].descripcion+"</p></a></div>");
+					$(".Blogs").append("<div class='col-xs-6 col-md-4'><a style='text-decoration:none; 'href='#'><img style='width:50%; display:block; margin:0 auto;' src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Playa-el-campello.jpg/800px-Playa-el-campello.jpg'/><h2 class='titleServices' style='padding-top:10px;'>"+data[i].titulo+"</h2><h4 class='Services-text'>" + data[i].fecha + "</h4>"+data[i].descripcion+"</a></div>");
 				}
 			}
 		});
