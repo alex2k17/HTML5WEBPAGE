@@ -99,8 +99,9 @@ jQuery(function($){
 		$(".main").empty();
 		//$(".main").append("<script>tinymce.remove();</script>");
 		tinymce.remove();
-		$(".main").append("<section id='mServices'><div class='container-fluid'><div class='row'><div class='col-xs-6 col-md-4'><h2>Blog</h2><div class='input-group' style='width:100%;'><span class='input-group-addon'>Título</span><input class='form-control' id='titulo1' type='text'></div><br><p style='font-size:23px;'>Contenido:</p><textarea id='textarea1' style='width:auto;' rows='6' cols='60'></textarea><br><div><button class='actualizar btn btn-default' data-usage='edit' type='button' class='btn btn-default btn-md'>Publicar</button></div></div></div></section>");
+		$(".main").append("<section id='mServices'><div class='container-fluid'><div class='row'><div class='col-xs-6 col-md-8'><h2>Blog</h2><div class='input-group' style='width:100%;'><span class='input-group-addon'>Título</span><input class='form-control' id='titulo1' type='text'></div><br><p style='font-size:23px;'>Contenido:</p><textarea id='textarea1' style='width:auto;' rows='6' cols='60'></textarea><br><div id='btnupload'></div><div><button class='actualizar btn btn-default' data-usage='edit' type='button' class='btn btn-default btn-md'>Publicar</button></div></div></div></section>");
 		//$(".main").append("<script>tinymce.init({ selector:'textarea' });</script>");
+		addButtonUpload();
 		tinymce.init({ selector:'textarea' });
 	});
 
@@ -128,22 +129,25 @@ jQuery(function($){
 		});
 	}
 
-	function addButtonsUpload(url) {
-		var url = '../php/';
+	function addButtonUpload() {
+		var url = '/CARUSFERRY/php/';
+
 		$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', 'fileupload/css/jquery.fileupload.css'));
-		$("#textarea1").append("<div class='row' style='margin-left:20px; margin-top:20px;'><span class='btn btn-success fileinput-button'><i class='fa fa-plus' style='font-size:12px'></i><span> Seleccionar</span><input id='fileupload' type='file' name='files[]' data-url="+url+" multiple></span><br><br></div>");
-		$("#textarea1").append("<div class='row' style='margin-left:20px; margin-top:20px;'><div id='progress' class='progress' style='width:90%;'><div class='progress-bar progress-bar-success'></div></div></div>");
-		$("#textarea1").append("<div class='row' style='margin-left:20px; margin-top:20px;'><div id='files' class='files'></div></div>");
+		$("#btnupload").append("<div class='row' style='margin-left:0px; margin-top:20px;'><span class='btn btn-default fileinput-button'><i class='fa fa-plus' style='font-size:12px'></i><span> Seleccionar</span><input id='fileupload' type='file' name='files[]' data-url="+url+" multiple></span><br><br></div>");
+		$("#btnupload").append("<div class='row' style='margin-left:0px; margin-top:20px;'><div id='progress' class='progress' style='width:98%;'><div class='progress-bar progress-bar-success'></div></div></div>");
+		$("#btnupload").append("<div class='row' style='margin-left:0px; margin-top:0px;'><div id='files' class='files'></div></div>");
 		
 		$('#fileupload').fileupload({
 			url: url,
 	        dataType: 'json',
 	        done: function (e, data) {
+	        	console.log(data);
 	            $.each(data.result.files, function (index, file) {
 	                $('<p/>').text(file.name).appendTo(".files");
 	            });
 	        },
 	       progressall: function (e, data) {
+	       	console.log(data);
             var progress = parseInt(data.loaded / data.total * 100, 10);
             $("#progress .progress-bar").css("width", "0");
             $('#progress .progress-bar').css(

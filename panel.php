@@ -22,6 +22,9 @@ session_start();
 	<script src="js/mScript.js"></script>
 	<script src="js/tinymce.min.js"></script>
 	<link rel="stylesheet" type="text/css" id="u0" href="http://i-pointsite.com/CARUSFERRY/js/skins/lightgray/skin.min.css">
+	<script src="fileupload/js/vendor/jquery.ui.widget.js"></script>
+	<script src="fileupload/js/jquery.iframe-transport.js"></script>
+	<script src="fileupload/js/jquery.fileupload.js"></script>
 </head>
 <body>
 	<?php
