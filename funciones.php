@@ -78,7 +78,7 @@ if($accion=="login"){
 }else if($accion=="getBlogs"){
 	$con = abrirConexion();
 
-	$sql = "SELECT * FROM BLOG ORDER BY fecha LIMIT 3";
+	$sql = "SELECT * FROM BLOG ORDER BY fecha DESC LIMIT 3";
 
 	$result = $con->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
@@ -100,17 +100,17 @@ if($accion=="login"){
 }else if($accion=='insertBlog'){
 	$titulo = $_POST['titulo'];
 	$descripcion = $_POST['descripcion'];
-	$fichero = $_POST['ficheros'];
+	$fichero = $_POST['fichero'];
 
 	$con = abrirConexion();
 
-	$sql = "INSERT INTO BLOG ('titulo', 'descripcion', 'foto') VALUES(:titulo, :descripcion, :foto";
+	$sql = "INSERT INTO BLOG (titulo, descripcion, foto) VALUES(:titulo, :descripcion, :foto)";
 
 	$stmt = $con->prepare($sql);
 
 	$stmt->bindValue( "titulo", $titulo, PDO::PARAM_STR);
 	$stmt->bindValue( "descripcion", $descripcion, PDO::PARAM_STR);
-	$stmt->bindValue( "foto", "http://i-pointsite.com/CARUSFERRY/php/files/"+$fichero, PDO::PARAM_STR);
+	$stmt->bindValue( "foto", $fichero, PDO::PARAM_STR);
 
 	$stmt->execute();
 

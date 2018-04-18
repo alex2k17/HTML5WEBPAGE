@@ -11,7 +11,7 @@ jQuery(function($){
 			},
 			success: function (data) {
 				for(i = 0; i < data.length; i++){
-					$(".Services").append("<div class='col-xs-6 col-md-4'><h2 class='titleServices'>"+data[i].titulo+"</h2><p class='Services-text'>"+data[i].descripcion+"</p></div>");
+					$(".Services").append("<div class='col-xs-6 col-md-4'><h2 class='titleServices'>"+data[i].titulo+"</h2>"+data[i].descripcion+"</div>");
 				}
 			}
 		});
@@ -119,13 +119,29 @@ jQuery(function($){
 	function insertBlog(){
 		var titulo = $("#titulo1").val();
 		var descripcion = tinymce.get('textarea1').getContent();
-		console.log(fichero[0]);
 
+		if(fichero == null){
+
+		}else{
+			ajaxInsert(titulo, descripcion, fichero);
+		}
 		
 	}
 
-	function ajaxInsert(){
-
+	function ajaxInsert(titulo, descripcion, fichero){
+		$.ajax({
+			type: "POST",
+			url:"funciones.php",
+			data:{
+				"accion":"insertBlog",
+				"titulo":titulo,
+				"descripcion": descripcion,
+				"fichero": fichero
+			},
+			success: function (data){
+				console.log("INSERTADO");
+			}
+		});
 	}
 
 	
@@ -149,7 +165,6 @@ jQuery(function($){
 			},
 			success: function (data){
 
-				console.log(data);
 			}
 		});
 	}
@@ -169,11 +184,9 @@ jQuery(function($){
 	            $.each(data.result.files, function (index, file) {
 	                $('<p/>').text(file.name).appendTo(".files");
 	                fichero = file.url;
-	                console.log(fichero);
 	            });
 	        },
 	       progressall: function (e, data) {
-	       	console.log(data);
             var progress = parseInt(data.loaded / data.total * 100, 10);
             $("#progress .progress-bar").css("width", "0");
             $('#progress .progress-bar').css(
