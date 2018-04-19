@@ -115,6 +115,27 @@ if($accion=="login"){
 	$stmt->execute();
 
 	echo "INSERTADO";
+}else if($accion=='getBlogsList'){
+	$con = abrirConexion();
+
+	$sql = "SELECT * FROM BLOG ORDER BY fecha DESC";
+
+	$result = $con->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+
+	foreach ($result as $row) {
+		$date1 = strtr($row['fecha'], '/', '-');
+		$fecha=date('d-m-Y', strtotime($date1));
+	    $return[] = [ 
+		        'id' => $row['codBlog'],
+		        'titulo' => $row['titulo'],
+		        'descripcion' => trim_text($row['descripcion'], 15),
+		        'imagen' => $row['foto'],
+		        'fecha' => $fecha
+		    ];
+	}
+
+	header('Content-type: application/json');
+	echo json_encode($return);
 }
 
 function trim_text($text, $count){ 
@@ -161,6 +182,7 @@ function createUI() {
     $contenido .= "<div class='sidenav'>
   <a id='modificarPagina' href='#'>Modificar página</a>
   <a id='blog' href='#'>Blog</a>
+  <a id='listablog' href='#'>Lista de blogs</a>
 </div>
 
 <div class='main'>

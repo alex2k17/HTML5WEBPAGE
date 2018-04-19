@@ -114,6 +114,21 @@ jQuery(function($){
 		tinymce.init({ selector:'textarea' });
 	});
 
+	$("#listablog").click(function(){
+		$(".main").empty();
+		$.ajax({
+			type: "POST",
+			url: "funciones.php",
+			data: {
+				"accion":"getBlogsList"
+			},
+			success: function (data) {
+				console.log(data)	
+			}
+		});
+	});
+
+
 	
 
 	function insertBlog(){
